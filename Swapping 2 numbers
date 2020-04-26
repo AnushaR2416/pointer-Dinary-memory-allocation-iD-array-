@@ -1,0 +1,66 @@
+/*
+
+
+Mrs. Anitha , our favourite Maths teacher wanted to teach her students to swap two elements.
+Write a program to accept 2 integers and to swap them using functions and pointers.
+
+Function Specification:
+void swap(int *a,int *b)
+This functions swaps 2 integers.
+
+Input Format: 
+The input consists of 2 integer.
+ 
+Output Format: 
+Refer to the sample input and output for formatting details.
+[All text in bold corresponds to input and the rest corresponds to output.]
+
+Sample Input and Output: 
+Enter the value of a
+5
+Enter the value of b
+3
+Before swapping
+a = 5 b = 3
+After swapping
+a = 3 b = 5
+
+
+Problem Requirements:
+
+
+*/
+
+
+
+
+
+
+
+
+#include<stdio.h>
+#include<stdlib.h>
+void swap(int *a,int *b)
+{
+    int temp=*a;
+    *a=*b;
+    *b=temp;
+}
+int main()
+{
+    int a,b;
+	printf("Enter the value of a\n");
+	scanf("%d",&a);
+	printf("Enter the value of b\n");
+	scanf("%d",&b);
+	printf("Before swapping\n");
+	printf("a = %d b = %d\n",a,b);
+	
+	swap(&a,&b);
+	
+	printf("After swapping\n");
+	printf("a = %d b = %d",a,b);
+	
+	
+	return 0;
+}
