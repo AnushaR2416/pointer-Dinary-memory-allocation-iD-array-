@@ -1,0 +1,68 @@
+/*
+
+Mrs. Anitha , our favourite Maths teacher wanted to teach her new batch of students to find the distance between 2 points.
+Write a program to accept 2 points and to calculate distance between them using functions and pointers.
+ 
+Function Specification:
+
+float distance(int *x1, int *y1, int *x2, int *y2)
+This function returns the distance between two points.
+ 
+Input Format: 
+Input consists of 4 integers.
+The first 2 integers refers to x and y coordinate of Point 1
+The next 2 integers refers to x and y coordinate of Point 2
+ 
+Output Format: 
+Output consists of 1 float. Display the output correct to 2 decimal places.
+ 
+[All text in bold corresponds to input and the rest corresponds to output]
+
+Sample Input and Output:
+Enter x1
+2
+Enter y1
+3
+Enter x2
+4
+Enter y2
+1
+Distance between 2 points is 2.83
+
+
+Function Definitions:
+
+float distance (int *, int *, int *, int *) 
+*/
+
+
+
+
+
+
+#include<stdio.h>
+#include<stdlib.h>
+#include<math.h>
+float distance(int *,int *,int *,int *);
+int main()
+{
+	int x1,x2,y1,y2;
+	float sum=0;
+	printf("Enter x1\n");
+	scanf("%d",&x1);
+	printf("Enter y1\n");
+	scanf("%d",&y1);
+	printf("Enter x2\n");
+	scanf("%d",&x2);
+	printf("Enter y2\n");
+	scanf("%d",&y2);
+	sum=distance(&x1,&y1,&x2,&y2);
+	printf("Distance between 2 points is %.2f",sum);
+	return 0;
+}
+
+float distance(int *x1,int *y1,int *x2,int *y2)
+{
+    float sum=sqrt( ((*x2-*x1)*(*x2-*x1))  +  ((*y2-*y1)*(*y2-*y1)) );
+    return sum;
+}
