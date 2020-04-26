@@ -1,0 +1,64 @@
+/*
+
+Write a C program to find the square root of a number without using inbuilt function.
+
+ Function Specifiacation:
+
+float squareroot(int)
+
+this function accepts the number as argument and returns the square root.
+
+Input format :
+
+Input consists of an integer value.
+
+ 
+
+Output Format :
+
+Output consists of a float value.
+
+[ Refer Sample Input and Output for further details ]
+
+ 
+
+Sample Input and Output  :
+
+[ All text of bold corresponds to Input and the rest output ]
+
+Enter a number
+12
+The square root of 12 is 3.46
+
+
+Problem Requirements:
+*/
+
+
+
+
+
+
+
+#include<stdio.h>
+float squareroot(int n)
+{
+    float squrt=n/2,temp=0;
+    while(squrt!=temp)
+    {
+        temp=squrt;
+        squrt=(n/temp +temp)/2;
+    }
+    return squrt;
+}
+int main()
+{
+	int n;
+	float square;
+	printf("Enter a number \n");
+	scanf("%d",&n);
+	square=squareroot(n);
+	printf("The square root of %d is %.2f",n,square);
+	
+	return 0;
+}
