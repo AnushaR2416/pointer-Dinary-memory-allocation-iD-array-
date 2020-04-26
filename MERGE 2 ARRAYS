@@ -1,0 +1,110 @@
+/*
+Write a program to merge 2 arrays and display them in ascending order.
+Note:
+Refer to the problem requirements.
+ 
+
+Input Format:
+
+Input consists of 2n+1 integers. The first integer corresponds to ‘n’ , the size of the array. The next ‘n’ integers correspond to the elements in the first array. The last 'n' integers correspond to the elements in the second array. Assume that the maximum value of n is 15.
+
+Output Format:
+
+Refer sample output for details.
+
+Sample Input 1:
+
+Enter the number of elements in 2 arrays
+5
+
+Enter the first array elements
+2
+
+3
+
+6
+
+5
+
+4
+
+Enter the second array elements
+1
+
+1
+
+1
+
+1
+
+7
+
+Sample Output 1:
+
+Merging of two arrays
+1 1 1 1 2 3 4 5 6 7
+ 
+
+
+Problem Requirements:
+C
+Keyword	Min Count	Max Count
+[	0	0
+Keyword	Min Count	Max Count
+]	0	0
+*/
+
+
+
+
+
+
+#include<stdio.h>
+#include<stdlib.h>
+int main()
+{
+	int n,i,j,*a,*b,*c;
+	printf("Enter the number of elements in 2 arrays\n");
+	scanf("%d",&n);
+	a=(int*)malloc(n*sizeof(int));
+	b=(int*)malloc(n*sizeof(int));
+	c=(int*)malloc(n*2*sizeof(int));
+	printf("Enter the first array elements\n");
+	for(i=0;i<n;i++)
+	{
+	    scanf("%d",a+i);
+	}
+	printf("Enter the second array elements\n");
+	for(i=0;i<n;i++)
+	{
+	    scanf("%d",b+i);
+	}
+	printf("Merging of two arrays\n");
+	for(i=0;i<n;i++)
+	{
+	    *(c+i)=*(a+i);
+	}
+	j=0;
+	for(i=n;i<n*2;i++)
+	{
+	    *(c+i)=*(b+j);
+	    j++;
+	}
+	for(i=0;i<n*2;i++)
+	{
+	    for(j=0;j<n*2-i-1;j++)
+	    {
+	        if(*(c+j)>*(c+j+1))
+	        {
+	            int temp=*(c+j);
+	            *(c+j)=*(c+j+1);
+	            *(c+j+1)=temp;
+	        }
+	    }
+	}
+	for(i=0;i<n*2;i++)
+	{
+	    printf("%d ",*(c+i));
+	}
+	return 0;
+}
